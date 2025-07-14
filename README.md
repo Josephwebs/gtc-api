@@ -1,11 +1,11 @@
 # Task Management API
 
-This project provides a small FastAPI backend for collaborative task management.
+This project provides a small Django REST backend for collaborative task management.
 
 ## Features
 - JWT authentication (register, login, current user)
 - CRUD operations for tasks
-- PostgreSQL with SQLAlchemy
+- PostgreSQL with Django ORM
 - CORS enabled for local Angular frontend
 
 ## Setup
@@ -13,10 +13,11 @@ This project provides a small FastAPI backend for collaborative task management.
    ```bash
    pip install -r requirements.txt
    ```
-2. Copy `.env.example` to `.env` and update the values.
-3. Run the application:
+2. Copy `.env.example` to `.env` and update the values for the database and secret key.
+3. Apply migrations and run the application:
    ```bash
-   uvicorn app.main:app --reload
+   python manage.py migrate
+   python manage.py runserver
    ```
 
-The database tables are created automatically on startup using SQLAlchemy metadata.
+The database tables are created automatically with Django migrations.
