@@ -1,1 +1,1 @@
-first api gtc
+Django implementation of the GTC task management API.
